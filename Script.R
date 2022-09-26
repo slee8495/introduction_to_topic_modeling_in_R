@@ -46,19 +46,19 @@ cdfm <- quanteda::tokens(nyt$lead_paragraph,
                          split_hyphens = TRUE,
                          include_docvars = TRUE)
 
-cdfm <- tokens_select(cdfm, pattern = stopwords("en"), selection = "remove")
+cdfm <- quanteda::tokens_select(cdfm, pattern = stopwords("en"), selection = "remove")
 
 
-cdfm <- dfm(cdfm, #Document Feature Matrix 
-            verbose = quanteda_options("verbose"),
-            tolower = TRUE) 
+cdfm <- quanteda::dfm(cdfm, #Document Feature Matrix 
+                      verbose = quanteda_options("verbose"),
+                      tolower = TRUE) 
 
 
 
 
-cdfm <- dfm_trim(cdfm, 
-                 min_termfreq = 50, 
-                 min_docfreq = 5)
+cdfm <- quanteda::dfm_trim(cdfm, 
+                           min_termfreq = 50, 
+                           min_docfreq = 5)
 ?dfm_trim
 
 #min_termfreq minimum values of feature frequencies across all documents, below/above which features will be removed
