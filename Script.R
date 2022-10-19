@@ -61,6 +61,8 @@ cdfm <- quanteda::dfm_trim(cdfm,
                            min_docfreq = 5)
 ?dfm_trim
 
+cdfm %>% data.frame() -> a
+
 #min_termfreq minimum values of feature frequencies across all documents, below/above which features will be removed
 #min_docfreq  minimum values of a feature's document frequency, below/above which features will be removed
 
